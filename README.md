@@ -237,15 +237,6 @@ The Python programs use the standard library and do not require additional packa
 git clone https://github.com/PrajyotXDev/SSL-L7.git
 cd SSL-L7
 ```
-
-## Author
-
-**Prajyot Satarde**  
-Mathematics and Computing  
-IIT Dharwad
-
-GitHub: [@PrajyotXDev](https://github.com/PrajyotXDev)
-
 ---
 
 *Submitted as part of CS 202C — Software Systems Lab, Assignment 7.*
