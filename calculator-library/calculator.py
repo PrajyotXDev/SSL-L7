@@ -25,7 +25,7 @@ def divide(a, b):
 
 def square(a):
     a = _check_number(a, "a")
-    return a + a
+    return a * a
 
 if __name__ == "__main__":
     print(add(5, 3))
