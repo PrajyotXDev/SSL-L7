@@ -41,12 +41,20 @@ def add_task(path, description, priority="medium"):
 
 def list_tasks(path, priority=None):
     tasks = load_tasks(path)
-    if priority:
+
+    if priority is not None:
         if priority not in PRIORITIES:
             raise ValueError("Priority must be low, medium, or high")
         tasks = [t for t in tasks if t["priority"] == priority]
-    order = {"high": 0, "medium": 1, "low": 2}
-    return sorted(tasks, key=lambda t: (order[t["priority"]], int(t["task_id"])))
+
+    priority_order = {"high": 0, "medium": 1, "low": 2}
+    return sorted(
+        tasks,
+        key=lambda t: (
+            priority_order[t["priority"]],
+            int(t["task_id"])
+        )
+    )
 
 def update_status(path, task_id, status):
     if status not in STATUSES:
