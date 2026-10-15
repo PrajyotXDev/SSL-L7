@@ -1,0 +1,4 @@
+task_id,description,priority,status
+1,Finish lab assignment,high,pending
+2,Review Git commands,medium,pending
+3,Organize notes,low,completed
