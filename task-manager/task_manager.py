@@ -61,9 +61,17 @@ def update_status(path, task_id, status):
 
 def summarize(path):
     tasks = load_tasks(path)
+
     return {
-        "status": {s: sum(t["status"] == s for t in tasks) for s in sorted(STATUSES)},
-        "priority": {p: sum(t["priority"] == p for t in tasks) for p in ("high", "medium", "low")}
+        "total": len(tasks),
+        "status": {
+            status: sum(t["status"] == status for t in tasks)
+            for status in sorted(STATUSES)
+        },
+        "priority": {
+            priority: sum(t["priority"] == priority for t in tasks)
+            for priority in ("high", "medium", "low")
+        }
     }
 
 def main():
