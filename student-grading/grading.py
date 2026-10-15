@@ -2,20 +2,23 @@ import csv
 from pathlib import Path
 
 def grade_for_marks(marks):
-    """Return A/B/C/F for marks in [0, 100]; reject invalid values."""
+    """Validate marks and return the corresponding letter grade."""
     try:
         marks = float(marks)
     except (TypeError, ValueError):
         raise ValueError("Marks must be numeric")
+
     if not 0 <= marks <= 100:
         raise ValueError("Marks must be between 0 and 100")
-    if marks >= 80:
+
+    if 80 <= marks <= 100:
         return "A"
-    if marks >= 60:
+    elif 60 <= marks < 80:
         return "B"
-    if marks >= 40:
+    elif 40 <= marks < 60:
         return "C"
-    return "F"
+    else:
+        return "F"
 
 def load_students(csv_path):
     """Load CSV rows with name and marks columns; reject malformed records."""
